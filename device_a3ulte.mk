@@ -16,6 +16,9 @@ endif
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
+    
+ PRODUCTY_COPY_FILES += \
+    device/samsung/a3ulte/recovery.fstab:recovery/root/etc/twrp.fstab
 
 $(call inherit-product, build/target/product/full.mk)
 
