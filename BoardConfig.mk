@@ -36,9 +36,38 @@ TARGET_KERNEL_CONFIG := msm8916_sec_defconfig
 TARGET_KERNEL_SELINUX_CONFIG := selinux_defconfig
 TARGET_KERNEL_VARIANT_CONFIG := msm8916_sec_a3u_eur_defconfig
 # TARGET_PREBUILT_KERNEL := device/samsung/a3ulte/kernel
+
+
+
+
+
+
 BOARD_HAS_NO_SELECT_BUTTON := true
 RECOVERY_SDCARD_ON_DATA := true 
-DEVICE_RESOLUTION := 540x960
+# DEVICE_RESOLUTION := 540x960
 BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_HAS_NO_MISC_PARTITION := true
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
+TARGET_RECOVERY_PIXEL_FORMAT := BGRA_8888
+TW_THEME := portrait_hdpi
+include device/qcom/sepolicy/sepolicy.mk
+
+BOARD_SEPOLICY_DIRS += \
+    device/samsung/a3ulte/sepolicy
+
+BOARD_SEPOLICY_UNION += \
+    bluetooth_loader.te \
+    file.te \
+    file_contexts \
+    healthd.te \
+    property_contexts \
+    qseecomd.te \
+    surfaceflinger.te \
+    system_app.te \
+    system.te \
+    wcnss_service.te
+
+
+TW_TARGET_USES_QCOM_BSP := true
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+TW_INCLUDE_CRYPTO := true
