@@ -15,10 +15,9 @@ else
 endif
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_KERNEL):kernel
-    
-PRODUCT_COPY_FILES += \
-    device/samsung/a3ulte/twrp.fstab:recovery/root/etc/twrp.fstab
+    $(LOCAL_KERNEL):kernel \
+    device/samsung/a3ulte/twrp.fstab:recovery/root/etc/twrp.fstab \
+ device/samsung/a3ulte/dummy:dummy
 
 $(call inherit-product, build/target/product/full.mk)
 
