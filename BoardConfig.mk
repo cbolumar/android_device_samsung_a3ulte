@@ -35,6 +35,9 @@ TARGET_KERNEL_SOURCE := kernel/samsung/a3ulte
 TARGET_KERNEL_CONFIG := msm8916_sec_defconfig 
 TARGET_KERNEL_SELINUX_CONFIG := selinux_defconfig
 TARGET_KERNEL_VARIANT_CONFIG := msm8916_sec_a3u_eur_defconfig
+BOARD_KERNEL_SEPARATED_DT := true
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x01e00000
+BOARD_CUSTOM_BOOTIMG_MK := device/samsung/a3ulte/mkbootimg.mk
 # TARGET_PREBUILT_KERNEL := device/samsung/a3ulte/kernel
 
 AUDIO_FEATURE_LOW_LATENCY_PRIMARY := true
