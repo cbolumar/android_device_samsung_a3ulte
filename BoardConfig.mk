@@ -154,7 +154,7 @@ RECOVERY_SDCARD_ON_DATA := true
 BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_HAS_NO_MISC_PARTITION := true
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
-TARGET_RECOVERY_PIXEL_FORMAT := BGRA_8888
+TARGET_RECOVERY_PIXEL_FORMAT := RGB_565
 TW_THEME := portrait_hdpi
 include device/qcom/sepolicy/sepolicy.mk
 
@@ -178,3 +178,4 @@ TW_TARGET_USES_QCOM_BSP := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TW_INCLUDE_CRYPTO := true
 TW_NEW_ION_HEAP := true
+TARGET_RECOVERY_FSTAB := device/samsung/a3ulte/twrp.fstab
